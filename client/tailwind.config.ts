@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import {nextui} from "@nextui-org/react";
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -30,7 +30,6 @@ const config: Config = {
         'light-4': '#5C5C7B',
       }
     },
-  },
-  plugins: [nextui()],
+  }
 };
 export default config;
