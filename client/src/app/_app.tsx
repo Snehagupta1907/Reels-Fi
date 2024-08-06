@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <Head>
-        <title>APT-Reelfy</title>
+        <title>APT-Reelfi</title>
         <meta name="description" content="Apt reelfy" />
       </Head>
       <div className="background">
