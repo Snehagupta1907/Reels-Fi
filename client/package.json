@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aptos-labs/wallet-adapter-ant-design": "^3.0.9",
+    "@aptos-labs/wallet-adapter-react": "^3.5.9",
     "@nextui-org/react": "^2.4.6",
     "@nextui-org/theme": "^2.2.9",
     "framer-motion": "^11.3.21",
     "next": "14.2.5",
+    "petra-plugin-wallet-adapter": "^0.4.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",
