@@ -1,11 +1,21 @@
 "use client";
-import React, { useState } from "react";
-import { MdOutlineDashboard,MdHome } from "react-icons/md";
+import React, { useState, ReactNode } from "react";
+import { MdOutlineDashboard, MdHome } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { SiYoutubeshorts } from "react-icons/si";
-const Sidebar = () => {
+import Link from "next/link";
+
+interface SidebarProps {
+  children: ReactNode;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <>
@@ -28,11 +38,7 @@ const Sidebar = () => {
             </svg>
             <div className="z-10 flex flex-col flex-1">
               <div className="flex items-center justify-between flex-shrink-0 w-64 p-4">
-            
-                <p className="text-xl font-bold uppercase">
-                  Reels-Fi
-                </p>
-
+                <p className="text-xl font-bold uppercase">Reels-Fi</p>
                 <button
                   onClick={() => setIsSidebarOpen(false)}
                   className="p-1 rounded-lg focus:outline-none focus:ring"
@@ -56,34 +62,34 @@ const Sidebar = () => {
                 </button>
               </div>
               <nav className="flex flex-col gap-y-8 flex-1 w-64 p-4 mt-4">
-                <a href="#" className="flex items-center space-x-2">
+                <Link href="/home" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <MdHome size={35} />
                   <span className="font-bold text-xl">Home</span>
-                </a>
-                <a href="#" className="flex items-center space-x-2">
+                </Link>
+                <Link href="/dashboard" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <MdOutlineDashboard size={35} />
                   <span className="font-bold text-xl">Dashboard</span>
-                </a>
-                <a href="#" className="flex items-center space-x-2">
+                </Link>
+                <Link href="/profile" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <CgProfile size={35} />
                   <span className="font-bold text-xl">Profile</span>
-                </a>
-                <a href="#" className="flex items-center space-x-2">
+                </Link>
+                <Link href="/reeli" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <SiYoutubeshorts size={35} />
                   <span className="font-bold text-xl">Reeli</span>
-                </a>
-                <a href="#" className="flex items-center space-x-2">
+                </Link>
+                <Link href="/create-reel" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <VscGitPullRequestCreate size={35} />
                   <span className="font-bold text-xl">Create Reel</span>
-                </a>
-                <a href="#" className="flex items-center space-x-2">
+                </Link>
+                <Link href="/register" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <MdOutlineDashboard size={35} />
                   <span className="font-bold text-xl">Sign-up</span>
-                </a>
-                <a href="#" className="flex items-center space-x-2">
+                </Link>
+                <Link href="/login" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <MdOutlineDashboard size={35} />
                   <span className="font-bold text-xl">Login</span>
-                </a>
+                </Link>
               </nav>
               <div className="flex-shrink-0 p-4">
                 <button className="flex items-center space-x-2">
@@ -108,7 +114,7 @@ const Sidebar = () => {
             </div>
           </div>
         )}
-        <main className="flex flex-col items-center justify-center flex-1">
+        <main className="w-full h-screen">
           <button
             onClick={() => setIsSidebarOpen(true)}
             className="fixed p-2 text-white bg-black rounded-lg top-5 left-5"
@@ -130,15 +136,7 @@ const Sidebar = () => {
             <span className="sr-only">Open menu</span>
           </button>
           <h1 className="sr-only">Home</h1>
-
-          <span className="sr-only"></span>
-          <div className="glitch-container">
-            <p className="glitch">
-              <span aria-hidden="true">Reels-Fi</span>
-              Reels-Fi
-              <span aria-hidden="true">Reels-Fi</span>
-            </p>
-          </div>
+          {children}
         </main>
       </div>
     </>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
+import Sidebar from "@/components/Sidebar";
 
 
 export const metadata: Metadata = {
@@ -16,8 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black">
-        <NextUIProvider>{children}</NextUIProvider>
+      <body className="bg-dark-3">
+        <NextUIProvider>
+          <Sidebar>
+          {children}
+          </Sidebar>
+          </NextUIProvider>
       </body>
     </html>
   );
