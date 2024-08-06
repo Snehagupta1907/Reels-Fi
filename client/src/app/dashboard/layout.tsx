@@ -1,11 +1,11 @@
 // app/(dashboard)/layout.tsx
 import React from 'react';
-import Header from '../components/Header';
-
+import Header from '@/components/Header';
+import Sidebar from '@/components/Sidebar/index';
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <Header/>
+      <Sidebar/>
       <main>{children}</main>
     </div>
   );
