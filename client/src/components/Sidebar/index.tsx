@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { MdOutlineDashboard,MdHome } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { VscGitPullRequestCreate } from "react-icons/vsc";
+import { SiYoutubeshorts } from "react-icons/si";
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -62,47 +65,31 @@ const Sidebar = () => {
                   <span className="font-bold text-xl">Dashboard</span>
                 </a>
                 <a href="#" className="flex items-center space-x-2">
-                  <svg
-                    className="w-6 h-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                    />
-                  </svg>
-                  <span>Home</span>
+                  <CgProfile size={35} />
+                  <span className="font-bold text-xl">Profile</span>
                 </a>
                 <a href="#" className="flex items-center space-x-2">
-                  <svg
-                    className="w-6 h-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                    />
-                  </svg>
-                  <span>Home</span>
+                  <SiYoutubeshorts size={35} />
+                  <span className="font-bold text-xl">Reeli</span>
+                </a>
+                <a href="#" className="flex items-center space-x-2">
+                  <VscGitPullRequestCreate size={35} />
+                  <span className="font-bold text-xl">Create Reel</span>
+                </a>
+                <a href="#" className="flex items-center space-x-2">
+                  <MdOutlineDashboard size={35} />
+                  <span className="font-bold text-xl">Sign-up</span>
+                </a>
+                <a href="#" className="flex items-center space-x-2">
+                  <MdOutlineDashboard size={35} />
+                  <span className="font-bold text-xl">Login</span>
                 </a>
               </nav>
               <div className="flex-shrink-0 p-4">
                 <button className="flex items-center space-x-2">
                   <svg
                     aria-hidden="true"
-                    className="w-6 h-6"
+                    className="w-8 h-8"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -115,13 +102,13 @@ const Sidebar = () => {
                       d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                     />
                   </svg>
-                  <span>Logout</span>
+                  <span className="font-bold text-xl">Log Out</span>
                 </button>
               </div>
             </div>
           </div>
         )}
-        {/* <main className="flex flex-col items-center justify-center flex-1">
+        <main className="flex flex-col items-center justify-center flex-1">
           <button
             onClick={() => setIsSidebarOpen(true)}
             className="fixed p-2 text-white bg-black rounded-lg top-5 left-5"
@@ -152,7 +139,7 @@ const Sidebar = () => {
               <span aria-hidden="true">Reels-Fi</span>
             </p>
           </div>
-        </main> */}
+        </main>
       </div>
     </>
   );
