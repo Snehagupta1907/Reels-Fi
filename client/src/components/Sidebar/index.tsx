@@ -62,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                 </button>
               </div>
               <nav className="flex flex-col gap-y-8 flex-1 w-64 p-4 mt-4">
-                <Link href="/home" className="flex items-center space-x-2" onClick={handleLinkClick}>
+                <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
                   <MdHome size={35} />
                   <span className="font-bold text-xl">Home</span>
                 </Link>
