@@ -121,7 +121,7 @@ const Sidebar = () => {
             </div>
           </div>
         )}
-        <main className="flex flex-col items-center justify-center flex-1">
+        {/* <main className="flex flex-col items-center justify-center flex-1">
           <button
             onClick={() => setIsSidebarOpen(true)}
             className="fixed p-2 text-white bg-black rounded-lg top-5 left-5"
@@ -152,7 +152,7 @@ const Sidebar = () => {
               <span aria-hidden="true">Reels-Fi</span>
             </p>
           </div>
-        </main>
+        </main> */}
       </div>
     </>
   );
