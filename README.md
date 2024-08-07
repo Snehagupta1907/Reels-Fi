@@ -25,8 +25,8 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 
 ## Bounty Tracks Applied for and Deployed Contracts Link:
 - **1. Polygon Amoy Deployment:** <br/>
-  Reels-Fi : https://www.oklink.com/amoy/address/0x93073de0d67ecfbbc44321ef7e4d33bcf7f53b9a
-  USDC Tokens : https://www.oklink.com/amoy/address/0x41e94eb019c0762f9bfcf9fb1e58725bfb0e7582
+  - Reels-Fi : https://www.oklink.com/amoy/address/0x93073de0d67ecfbbc44321ef7e4d33bcf7f53b9a
+  - USDC Tokens : https://www.oklink.com/amoy/address/0x41e94eb019c0762f9bfcf9fb1e58725bfb0e7582
 - **2. Aptos Social Track:**
 - **3. Diamante Chain:**
 - **4. Edu Chain:**
