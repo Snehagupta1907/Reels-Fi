@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { SiYoutubeshorts } from "react-icons/si";
 import Link from "next/link";
-
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 interface SidebarProps {
   children: ReactNode;
 }
@@ -16,6 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const handleLinkClick = () => {
     setIsSidebarOpen(false);
   };
+  const { account } = useWallet();
 
   return (
     <>
@@ -62,35 +63,69 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                 </button>
               </div>
               <nav className="flex flex-col gap-y-8 flex-1 w-64 p-4 mt-4">
-                <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
+                <Link
+                  href="/"
+                  className="flex items-center space-x-2"
+                  onClick={handleLinkClick}
+                >
                   <MdHome size={35} />
                   <span className="font-bold text-xl">Home</span>
                 </Link>
-                <Link href="/dashboard" className="flex items-center space-x-2" onClick={handleLinkClick}>
-                  <MdOutlineDashboard size={35} />
-                  <span className="font-bold text-xl">Dashboard</span>
-                </Link>
-                <Link href="/profile" className="flex items-center space-x-2" onClick={handleLinkClick}>
-                  <CgProfile size={35} />
-                  <span className="font-bold text-xl">Profile</span>
-                </Link>
-                <Link href="/reeli" className="flex items-center space-x-2" onClick={handleLinkClick}>
-                  <SiYoutubeshorts size={35} />
-                  <span className="font-bold text-xl">Reeli</span>
-                </Link>
-                <Link href="/create-reel" className="flex items-center space-x-2" onClick={handleLinkClick}>
-                  <VscGitPullRequestCreate size={35} />
-                  <span className="font-bold text-xl">Create Reel</span>
-                </Link>
-                <Link href="/register" className="flex items-center space-x-2" onClick={handleLinkClick}>
-                  <MdOutlineDashboard size={35} />
-                  <span className="font-bold text-xl">Sign-up</span>
-                </Link>
-                <Link href="/login" className="flex items-center space-x-2" onClick={handleLinkClick}>
-                  <MdOutlineDashboard size={35} />
-                  <span className="font-bold text-xl">Login</span>
-                </Link>
-             
+                {account?.address ? (
+                  <>
+                    <Link
+                      href="/dashboard"
+                      className="flex items-center space-x-2"
+                      onClick={handleLinkClick}
+                    >
+                      <MdOutlineDashboard size={35} />
+                      <span className="font-bold text-xl">Dashboard</span>
+                    </Link>
+                    <Link
+                      href="/profile"
+                      className="flex items-center space-x-2"
+                      onClick={handleLinkClick}
+                    >
+                      <CgProfile size={35} />
+                      <span className="font-bold text-xl">Profile</span>
+                    </Link>
+                    <Link
+                      href="/reeli"
+                      className="flex items-center space-x-2"
+                      onClick={handleLinkClick}
+                    >
+                      <SiYoutubeshorts size={35} />
+                      <span className="font-bold text-xl">Reeli</span>
+                    </Link>
+                    <Link
+                      href="/create-reel"
+                      className="flex items-center space-x-2"
+                      onClick={handleLinkClick}
+                    >
+                      <VscGitPullRequestCreate size={35} />
+                      <span className="font-bold text-xl">Create Reel</span>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/register"
+                      className="flex items-center space-x-2"
+                      onClick={handleLinkClick}
+                    >
+                      <MdOutlineDashboard size={35} />
+                      <span className="font-bold text-xl">Sign-up</span>
+                    </Link>
+                    <Link
+                      href="/login"
+                      className="flex items-center space-x-2"
+                      onClick={handleLinkClick}
+                    >
+                      <MdOutlineDashboard size={35} />
+                      <span className="font-bold text-xl">Login</span>
+                    </Link>
+                  </>
+                )}
               </nav>
               <div className="flex-shrink-0 p-4">
                 <button className="flex items-center space-x-2">

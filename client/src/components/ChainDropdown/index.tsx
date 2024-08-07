@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 const ChainDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedChain, setSelectedChain] = useState<string | null>(null);
-  const chains = ["Aptos", "Polygon Amoy", "EduChain", "Diamante"];
+  const chains = ["Aptos", "Polygon Amoy", "EduChain", "Wan-Chain"];
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
