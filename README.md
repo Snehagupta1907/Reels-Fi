@@ -19,6 +19,12 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 - Petra Wallet SDK
 
 ## Challenges and Solution
+- Inadequate Rewards for User Engagement
+    - Problem: Despite contributing valuable content and engagement, users receive little to no tangible rewards for their participation on most social media platforms.
+- Barrier to Monetization for Small Creators
+    - Many small creators struggle to monetize their content effectively due to high entry barriers and the dominance of established influencers.
+- Time and Effort Not Valued
+    - Users spend significant time and effort creating and engaging with content but often feel that their contributions are undervalued.
 
 
 ## Bounty Tracks Applied for and Deployed Contracts Link:
@@ -42,5 +48,7 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 <img width="1470" alt="Screenshot 2024-08-08 at 2 29 11 AM" src="https://github.com/user-attachments/assets/6d268e22-dfef-4eb1-b165-c3ac3b69a1b2">
 <img width="1470" alt="Screenshot 2024-08-08 at 2 30 30 AM" src="https://github.com/user-attachments/assets/4f245bdb-8183-4dab-b775-b370d0c89c82">
 <img width="1467" alt="Screenshot 2024-08-08 at 2 30 39 AM" src="https://github.com/user-attachments/assets/c98d29f4-c4bb-401e-ada9-1d80a482bb33">
+<img width="1470" alt="Screenshot 2024-08-08 at 2 55 17 AM" src="https://github.com/user-attachments/assets/1c044137-3758-4b9b-b83a-ac0ae3e71e25">
+<img width="1470" alt="Screenshot 2024-08-08 at 3 02 25 AM" src="https://github.com/user-attachments/assets/aba561ae-a44a-4277-8125-c8fd9676de4a">
 
 
