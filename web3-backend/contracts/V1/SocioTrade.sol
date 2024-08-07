@@ -3,7 +3,7 @@ pragma solidity ^0.8.16;
 
 import {IERC20} from "../Interfaces/IERC20.sol";
 
-contract SocioTrade {
+contract ReelsFi {
     address public owner;
     uint256 public constant POST_FEES = 1e2 wei;
     IERC20 private erc20;
