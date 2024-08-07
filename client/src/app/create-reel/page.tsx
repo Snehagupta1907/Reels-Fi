@@ -33,7 +33,7 @@ const CreateReelPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-1 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-dark-3 flex items-center justify-center p-4">
       <div className="w-full max-w-lg bg-dark-2 p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold mb-6 text-light-1">Create Reel</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -124,7 +124,7 @@ const CreateReelPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-primary-500 text-light-1 py-2 px-4 rounded-lg shadow-md hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="w-full flex justify-center py-4 px-4 border border-transparent shadow-sm text-sm  text-dark-1 font-semibold bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600"
           >
             Submit
           </button>

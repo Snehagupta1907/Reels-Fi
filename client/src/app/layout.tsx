@@ -7,6 +7,8 @@ import { AptosWalletAdapterProvider } from "@aptos-labs/wallet-adapter-react";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import DataContextProvider from "@/context/DataContext";
 import toast, { Toaster } from "react-hot-toast";
+import Header from "@/components/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-dark-3">
-        <Toaster position="top-right" reverseOrder={false} />
-        <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
+      <Toaster position="top-right" reverseOrder={false} />
+      <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
+        <Header />
           <Sidebar>
             <DataContextProvider>{children}</DataContextProvider>
           </Sidebar>
