@@ -32,7 +32,9 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 - **4. Edu Chain:**
   - Platform Token : https://opencampus-codex.blockscout.com/address/0x6D4E4b9cEb5A92F5212c017187528bCd0c516965
   - Reels-Fi Contract : https://opencampus-codex.blockscout.com/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA
-- **5. Graph Protocol:**
+- **5. Wan Chain:**
+  - Platform Token : https://testnet.wanscan.org/token/0x6d4e4b9ceb5a92f5212c017187528bcd0c516965
+  - Reels-Fi Contract : https://testnet.wanscan.org/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA
 
 
 ### Platform UI 
