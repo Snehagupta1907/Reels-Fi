@@ -24,11 +24,11 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 
 
 ## Bounty Tracks Applied for and Deployed Contracts Link:
-**1. Polygon Amoy:**
-**2. Aptos Social Track:**
-**3. Diamante Chain:**
-**4. Edu Chain:**
-**5. Graph Protocol:**
+- **1. Polygon Amoy:**
+- **2. Aptos Social Track:**
+- **3. Diamante Chain:**
+- **4. Edu Chain:**
+- **5. Graph Protocol:**
 
 
 ### Platform UI 
