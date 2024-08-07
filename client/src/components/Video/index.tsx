@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
 import { VideoType } from "../../types/Video";
 import { RiShareForwardFill } from "react-icons/ri";
-import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { FaHeart, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { MdInsertComment } from "react-icons/md";
 import {
   IoMdClose,
@@ -232,6 +232,7 @@ const Video = ({
   const [bidAmount, setBidAmount] = useState("");
   const [tenure, setTenure] = useState("");
   const [totalBid, setTotalBid] = useState<number>(0);
+  const [incrementValue, setIncrementValue] = useState<number>(0); // New state for increment value
 
   useEffect(() => {
     // Retrieve total bid for the current video post ID
@@ -247,6 +248,14 @@ const Video = ({
     }
   }, [playingVideo, video.postId]);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIncrementValue((prevValue) => prevValue + 2);
+    }, 5000); // Increment value every 5 seconds
+
+    return () => clearInterval(intervalId); // Clean up on component unmount
+  }, []);
+
   const handleBidAmount = () => {
     setIsModalOpen(true);
   };
@@ -258,12 +267,10 @@ const Video = ({
       return;
     }
 
-    // Store bid for the current video post ID in local storage
     const storedBids = JSON.parse(localStorage.getItem(`bids_${video.postId}`) || "[]");
     storedBids.push(newBid);
     localStorage.setItem(`bids_${video.postId}`, JSON.stringify(storedBids));
 
-    // Update total bid for the current video post ID
     const sumOfBids = storedBids.reduce((total: number, bid: number) => total + bid, 0);
     setTotalBid(sumOfBids);
 
@@ -276,12 +283,6 @@ const Video = ({
   const handleLike = () => {
     setDisliked(false);
     setLiked((prevLiked) => !prevLiked);
-  };
-
-  const handleDislike = () => {
-    setLiked(false);
-    setDisliked((prevDisliked) => !prevDisliked);
-    toast.success("Thank you for your feedback!");
   };
 
   const handleShare = () => {
@@ -413,7 +414,7 @@ const Video = ({
               aria-label="I like this"
               className={`like-button ${liked ? "liked" : ""}`}
             >
-              <FaThumbsUp />
+              <FaHeart/>
             </button>
             <span>
               {video.reaction.count > 0
@@ -422,17 +423,6 @@ const Video = ({
                   : video.reaction.count
                 : "Like"}
             </span>
-          </div>
-          <div className="dislike">
-            <button
-              title="I dislike this"
-              onClick={handleDislike}
-              aria-label="I dislike this"
-              className={`dislike-button ${disliked ? "disliked" : ""}`}
-            >
-              <FaThumbsDown />
-            </button>
-            <span>Dislike</span>
           </div>
           <div className="bid-amount">
             <button
@@ -483,12 +473,13 @@ const Video = ({
               value={tenure}
               onChange={(e) => setTenure(e.target.value)}
             />
-            <button className="confirm-button" onClick={handleConfirm}>
-              Confirm
-            </button>
+            <button className="confirm-button" onClick={handleConfirm}>Confirm</button>
           </div>
         </div>
       )}
+      <div className="increment-value">
+        <p>Increment Value: {incrementValue}</p>
+      </div>
     </VideoStyled>
   );
 };
