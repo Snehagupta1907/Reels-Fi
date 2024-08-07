@@ -1,19 +1,36 @@
+"use client";
 import React from "react";
-
+import { useDataContext } from "@/context/DataContext";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 const DashboardPage = () => {
+  const {  mintTokens,transferTokens,depositTokens } = useDataContext();
+  const { account } = useWallet();
+
+  const handleClick = async () => {
+    if (!account) return;
+    console.log("Account:", account);
+    // await getTokenMetadata(account?.address);
+    // await mintTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",1000000000);
+    // await transferTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4","0x27ef28cce0eed615f0029370831aeb75cbbbfefdbf12087bea94f11745759bb6",1000);
+    await depositTokens();
+  };
   return (
     <div className="bg-dark-3 h-screen flex justify-center items-center">
-      <div className="text-slate-600 mx-auto grid max-w-2xl grid-cols-2 gap-y-4 px-4 py-1 sm:rounded-md sm:border sm:shadow">
-        <div className="col-span-2 col-start-1 flex flex-col justify-between border-b py-3 sm:flex-row">
-          <p className="font-medium">Overview</p>
-          <select className="text-slate-500 hover:bg-slate-200 rounded-lg border-2 px-4 py-2 font-medium focus:outline-none focus:ring">
-            <option value="last-month">Last Month</option>
-            <option value="last-month">Last 2 Months</option>
-            <option value="last-month">This Year</option>
-          </select>
+      <div className="text-white mx-auto grid max-w-3xl grid-cols-2 gap-y-4 px-10 py-10 sm:rounded-md sm:border sm:shadow">
+        <div className="col-span-2 col-start-1 flex flex-col justify-between py-3 sm:flex-row">
+          <p className="font-bold text-xl">Nikku.Dev</p>
+          <button
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            handleClick
+          </button>
         </div>
         <div className="col-span-2 -mx-4 bg-gradient-to-t from-indigo-500 to-blue-500 px-4 py-8 sm:col-span-1 sm:mx-0 sm:rounded-xl sm:py-4">
-          <p className="mb-4 font-medium text-indigo-100">Cases in pipeline</p>
+          <p className="mb-4 font-bold text-indigo-100">
+            Reels Created Till Now
+          </p>
           <div className="mb-6 flex max-w-xs">
             <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-400 sm:mr-3 sm:mb-0">
               <svg
@@ -85,7 +102,7 @@ const DashboardPage = () => {
             </span>
           </div>
         </div>
-        <div className="col-span-2 col-start-1 grid grid-cols-2 gap-6 border-t py-4 sm:grid-cols-4 sm:px-4 sm:py-8">
+        <div className="col-span-2 col-start-1 grid grid-cols-2 gap-6 py-4 sm:grid-cols-4 sm:px-4 sm:py-8">
           <div className="">
             <p className="text-slate-500 text-sm">Revenue</p>
             <p className="text-xl font-medium">$924,883</p>

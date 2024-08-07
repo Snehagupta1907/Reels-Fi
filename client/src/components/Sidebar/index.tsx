@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { SiYoutubeshorts } from "react-icons/si";
 import Link from "next/link";
-
+import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 interface SidebarProps {
   children: ReactNode;
 }
@@ -90,6 +90,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                   <MdOutlineDashboard size={35} />
                   <span className="font-bold text-xl">Login</span>
                 </Link>
+                <WalletSelector />
               </nav>
               <div className="flex-shrink-0 p-4">
                 <button className="flex items-center space-x-2">
