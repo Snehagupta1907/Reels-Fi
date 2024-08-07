@@ -6,6 +6,7 @@ import { PetraWallet } from "petra-plugin-wallet-adapter";
 import { AptosWalletAdapterProvider } from "@aptos-labs/wallet-adapter-react";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import DataContextProvider from "@/context/DataContext";
+import toast, { Toaster } from 'react-hot-toast';
 export default function RootLayout({
   children,
 }: Readonly<{
