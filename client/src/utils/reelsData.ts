@@ -2,7 +2,7 @@ export const reelsData = [
   {
     id: "popoajspfnas",
     caption: "Iron Man vs Hulk Fight scene from Avengers Age of Ultron",
-    src: "./videos/1.mp4",
+    src: "https://youtube.com/shorts/2YNdDAOfqgI?si=KoKYMLcjNhhXoSgU",
     user: {
       name: "Sahil Verma",
       avatar:

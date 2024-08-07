@@ -28,6 +28,15 @@ const config: Config = {
         'light-2': '#EFEFEF',
         'light-3': '#7878A3',
         'light-4': '#5C5C7B',
+      },
+      animation: {
+        rotation: 'rotation 1s linear infinite',
+      },
+      keyframes: {
+        rotation: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       }
     },
   }

@@ -1,26 +1,86 @@
-"use client";
-import React from 'react'
-import ReelsVideoCard from "@/components/ReelsPlayerCard/index";
-import { reelsData } from "@/utils/reelsData";
-import { motion } from "framer-motion";
+"use client"
+import { createGlobalStyle } from "styled-components";
+import { Toaster } from "react-hot-toast";
+import VideoList from "@/components/VideoList.tsx";
+
+const GlobalStyle = createGlobalStyle`
+  :root{
+    --light-color: 241 241 241;
+    --dark-color: 15 15 15;
+    --primary-color: 255 0 0;
+    --secondary-color: 62 166 255;
+    --success-color: 3 179 10;
+    --like-color: 16 110 190;
+    --font-poppins: 'Poppins', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  html {
+    color-scheme: dark;
+  }
+  html, body {
+    overflow-x: hidden;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-poppins);
+    outline: none;
+  }
+  body {
+    position: relative;
+    background-color: #101012;
+    color: #101012;
+  }
+  .container {
+    margin-inline: auto;
+    width: min(90%, 70rem);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.15s;
+  }
+  input{
+    background-color: transparent;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+  }
+  & span.loader {
+    margin-bottom: 2rem;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #FFF;
+    border-bottom-color: rgb(var(--dark-color));
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+  }
+  @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+`;
 
 const ReeliPage = () => {
   return (
-    <>
-   <div className='min-h-screen bg-dark-3 w-full'> <motion.div>
-      <div className="lg:max-w-4xl min-h-screen bg-dark-3 space-y-10 md:p-3 lg:mx-auto mb-8">
-        <div className="h-full w-full bg-transparent flex items-center justify-center">
-          <div className="max-w-[400px] h-full md:h-auto w-full overflow-y-scroll snap-y aspect-[9/16] shadow-lg md:rounded">
-            {reelsData?.map((video) => (
-              <ReelsVideoCard key={video?.id} video={video} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </motion.div></div>
-    
-    </>
-  )
-}
+    <div className="bg-dark-3">
+      <GlobalStyle />
+      <Toaster />
+      <VideoList />
+    </div>
+  );
+};
 
-export default ReeliPage
+export default ReeliPage;
