@@ -6,6 +6,7 @@ import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { SiYoutubeshorts } from "react-icons/si";
 import Link from "next/link";
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
+
 interface SidebarProps {
   children: ReactNode;
 }
@@ -19,10 +20,10 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 
   return (
     <>
-      <div className="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+      <div className="relative flex h-screen antialiased text-gray-900 bg-dark-4">
         {isSidebarOpen && (
           <div
-            className={`fixed inset-y-0 z-10 flex w-80 transform transition-transform duration-300 ${
+            className={`fixed inset-y-0 z-30 flex w-80 transform transition-transform duration-300 ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
@@ -118,7 +119,9 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         <main className="w-full h-screen">
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="fixed p-2 text-white bg-black rounded-lg top-5 left-5"
+            className={`fixed p-2 text-white bg-black rounded-lg top-5 left-5 transition-transform ${
+              isSidebarOpen ? "z-10" : "z-40"
+            }`}
           >
             <svg
               className="w-6 h-6"
