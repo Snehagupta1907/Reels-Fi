@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
             </svg>
             <div className="z-10 flex flex-col flex-1">
               <div className="flex items-center justify-between flex-shrink-0 w-64 p-4">
-                <p className="text-xl font-bold uppercase">Reels-Fi</p>
+                <p className="text-2xl font-bold">Reels-Fi</p>
                 <button
                   onClick={() => setIsSidebarOpen(false)}
                   className="p-1 rounded-lg focus:outline-none focus:ring"

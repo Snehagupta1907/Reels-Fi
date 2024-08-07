@@ -1,6 +1,5 @@
 "use client"
 import { createGlobalStyle } from "styled-components";
-import { Toaster } from "react-hot-toast";
 import VideoList from "@/components/VideoList.tsx";
 
 const GlobalStyle = createGlobalStyle`
@@ -77,7 +76,6 @@ const ReeliPage = () => {
   return (
     <div className="bg-dark-3">
       <GlobalStyle />
-      <Toaster />
       <VideoList />
     </div>
   );

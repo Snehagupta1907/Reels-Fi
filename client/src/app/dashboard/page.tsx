@@ -10,9 +10,9 @@ const DashboardPage = () => {
     if (!account) return;
     console.log("Account:", account);
     // await getTokenMetadata(account?.address);
-    // await mintTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",1000000000);
+    await mintTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",1000000000);
     // await transferTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4","0x27ef28cce0eed615f0029370831aeb75cbbbfefdbf12087bea94f11745759bb6",1000);
-    await depositTokens();
+    // await depositTokens();
   };
   return (
     <div className="bg-dark-3 h-screen flex justify-center items-center">

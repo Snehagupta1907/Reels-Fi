@@ -5,6 +5,7 @@ import { VideoType } from "../../types/Video";
 import { RiShareForwardFill } from "react-icons/ri";
 import { FaHeart, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { MdInsertComment } from "react-icons/md";
+
 import {
   IoMdClose,
   IoMdPause,
@@ -14,6 +15,7 @@ import {
 } from "react-icons/io";
 import { toast } from "react-hot-toast";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import { useDataContext } from "@/context/DataContext";
 
 interface VideoStyledProps {
   isOpen: boolean;
@@ -151,10 +153,11 @@ const VideoStyled = styled.div<VideoStyledProps>`
   }
   .modal {
     position: fixed;
-    top: 0;
+    top: 25%;
+    border-radius: 1rem !important;
     right: 8rem;
-    width: 300px;
-    height: 100%;
+    width: 400px;
+    height: 50%;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     display: flex;
@@ -233,7 +236,7 @@ const Video = ({
   const [tenure, setTenure] = useState("");
   const [totalBid, setTotalBid] = useState<number>(0);
   const [incrementValue, setIncrementValue] = useState<number>(0); // New state for increment value
-
+  const {  mintTokens } = useDataContext();
   useEffect(() => {
     // Retrieve total bid for the current video post ID
     const storedBids = JSON.parse(localStorage.getItem(`bids_${video.postId}`) || "[]");
@@ -260,7 +263,7 @@ const Video = ({
     setIsModalOpen(true);
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     const newBid = parseFloat(bidAmount);
     if (isNaN(newBid) || newBid <= 0) {
       toast.error("Invalid bid amount.");
@@ -273,8 +276,7 @@ const Video = ({
 
     const sumOfBids = storedBids.reduce((total: number, bid: number) => total + bid, 0);
     setTotalBid(sumOfBids);
-
-    toast.success("Bid submitted!");
+    await mintTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",newBid*(10**6));
     setIsModalOpen(false);
     setBidAmount("");
     setTenure("");
@@ -473,7 +475,7 @@ const Video = ({
               value={tenure}
               onChange={(e) => setTenure(e.target.value)}
             />
-            <button className="confirm-button" onClick={handleConfirm}>Confirm</button>
+            <button className="confirm-button" onClick={handleConfirm}>Invest Amount</button>
           </div>
         </div>
       )}

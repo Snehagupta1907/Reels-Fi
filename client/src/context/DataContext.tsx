@@ -4,6 +4,7 @@ import {
   useWallet,
   InputTransactionData,
 } from "@aptos-labs/wallet-adapter-react";
+import toast from "react-hot-toast";
 import { Provider, Network } from "aptos";
 // import { Aptos, AptosConfig,  } from "@aptos-labs/ts-sdk";
 const DataContext = React.createContext();
@@ -40,15 +41,18 @@ const DataContextProvider = ({ children }) => {
       },
     };
     try {
+      let id = toast.loading("Investing Tokens...");
       // sign and submit transaction to chain
       const response = await signAndSubmitTransaction(mintPayload);
       // wait for transaction
       await provider.waitForTransaction(response.hash);
+      toast.success("Invested Successfully !!!", { id });
     } catch (error: any) {
       console.log(error);
+      toast.error("Investment Failed !!!");
     }
   };
-  const transferTokens = async ( fromAddress, toAddress, transferAmount) => {
+  const transferTokens = async (fromAddress, toAddress, transferAmount) => {
     const transferPayload = {
       data: {
         function: `${MODULE_ADDRESS}::reels_fi::transfer`, // Update this with the correct module and function name
@@ -56,38 +60,36 @@ const DataContextProvider = ({ children }) => {
         functionArguments: [fromAddress, toAddress, transferAmount],
       },
     };
-  
+
     try {
       // Sign and submit the transaction to the chain
       const response = await signAndSubmitTransaction(transferPayload);
-  
+
       // Wait for the transaction to be confirmed
       await provider.waitForTransaction(response.hash);
-  
-      console.log('Transfer successful');
+
+      console.log("Transfer successful");
     } catch (error) {
-      console.log('Transfer failed', error);
+      console.log("Transfer failed", error);
     }
   };
   const depositTokens = async (toAddress, fungibleAsset) => {
     const depositPayload = {
       data: {
-        function: `${MODULE_ADDRESS}::reels_fi::deposit`, 
-        typeArguments: [], 
+        function: `${MODULE_ADDRESS}::reels_fi::deposit`,
+        typeArguments: [],
         functionArguments: [toAddress, fungibleAsset],
       },
     };
-  
+
     try {
       // Sign and submit the transaction to the chain
       const response = await signAndSubmitTransaction(depositPayload);
-  
       // Wait for the transaction to be confirmed
       await provider.waitForTransaction(response.hash);
-  
-      console.log('Deposit successful');
+      console.log("Deposit successful");
     } catch (error) {
-      console.log('Deposit failed', error);
+      console.log("Deposit failed", error);
     }
   };
   return (
@@ -96,8 +98,7 @@ const DataContextProvider = ({ children }) => {
         // getTokenMetadata,
         mintTokens,
         transferTokens,
-        depositTokens
-
+        depositTokens,
       }}
     >
       {children}

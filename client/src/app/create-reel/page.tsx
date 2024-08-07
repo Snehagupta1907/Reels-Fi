@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import toast from "react-hot-toast";
 const CreateReelPage = () => {
   const [video, setVideo] = useState<File | null>(null);
   const [title, setTitle] = useState("");
@@ -12,8 +12,10 @@ const CreateReelPage = () => {
       setVideo(e.target.files[0]);
     }
   };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    let id = toast.loading("Uploading your video...");
+    await delay(2000);
     e.preventDefault();
     // Handle form submission here
     console.log({
@@ -22,6 +24,8 @@ const CreateReelPage = () => {
       description,
       monetize,
     });
+
+    toast.success("Video uploaded successfully!", { id });
   };
   return (
     <div className="min-h-screen bg-dark-1 flex items-center justify-center p-4">
@@ -31,7 +35,7 @@ const CreateReelPage = () => {
           <div className="flex items-center justify-center w-full">
             <label
               htmlFor="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+              className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
             >
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg
@@ -74,7 +78,7 @@ const CreateReelPage = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              className="mt-1 block w-full text-light-1 bg-dark-3 border border-dark-4 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500"
+              className="mt-1 p-4 block w-full text-light-1 bg-dark-3 border border-dark-4 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
           <div>
@@ -90,22 +94,22 @@ const CreateReelPage = () => {
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
               required
-              className="mt-1 block w-full text-light-1 bg-dark-3 border border-dark-4 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500"
+              className="mt-1 p-4 block w-full text-light-1 bg-dark-3 border border-dark-4 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
           <div className="flex items-center space-x-3">
             <input
               type="checkbox"
-              id="monetize"
+              id="monetize your Content"
               checked={monetize}
               onChange={() => setMonetize(!monetize)}
               className="h-4 w-4 text-primary-500 border-dark-4 rounded focus:ring-primary-500"
             />
             <label
-              htmlFor="monetize"
+              htmlFor="monetize your Content"
               className="text-sm font-medium text-light-2"
             >
-              Monetize
+              Monetize your Reel with Reels-Fi
             </label>
           </div>
           <button
