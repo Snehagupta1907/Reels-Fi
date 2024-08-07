@@ -30,7 +30,7 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 - **2. Aptos Social Track:**
 - **3. Diamante Chain:**
 - **4. Edu Chain:**
-  - Platform Token : https://opencampus-codex.blockscout.com/tx/0xd4fbf4d4395f6d492da52befc1a87c49a7c839cf96c7484d7e3d5e9e748def77
+  - Platform Token : https://opencampus-codex.blockscout.com/address/0x6D4E4b9cEb5A92F5212c017187528bCd0c516965
   - Reels-Fi Contract : https://opencampus-codex.blockscout.com/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA
 - **5. Graph Protocol:**
 
