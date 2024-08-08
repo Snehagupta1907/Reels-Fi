@@ -1,5 +1,5 @@
-# REELs-Fi (Now Watch And Earn Rewards)
- <br/>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=1000&size=55&pause=1000&center=true&vCenter=true&width=1000&lines=Reels+-+Fi;  Now+Watch+And+Earn+Rewards" alt="Typing SVG" /></a>
+ <br/> <br/> <br/> <br/> <br/> <br/> <br/>
 <img width="371" alt="Screenshot 2024-08-08 at 12 55 05 AM" src="https://github.com/user-attachments/assets/c2878eb1-6950-43e3-b1e4-92f2f17226da">
  <br/> <br/>
 APT-Reels-fi is a platform designed for avid reel viewers, offering them the opportunity to place bets on the engagement of reels. If the engagement of a reel increases within a specified time frame, users can earn rewards based on their predictions.
