@@ -53,6 +53,7 @@ const DataContextProvider = ({ children }) => {
     }
   };
   const transferTokens = async (fromAddress, toAddress, transferAmount) => {
+    let id = toast.loading("Claiming Tokens...");
     const transferPayload = {
       data: {
         function: `${MODULE_ADDRESS}::reels_fi::transfer`, // Update this with the correct module and function name
@@ -67,10 +68,11 @@ const DataContextProvider = ({ children }) => {
 
       // Wait for the transaction to be confirmed
       await provider.waitForTransaction(response.hash);
-
+    toast.success("Claimed Successfully !!!", { id });
       console.log("Transfer successful");
     } catch (error) {
       console.log("Transfer failed", error);
+        toast.error("Claiming Failed !!!");
     }
   };
   const depositTokens = async (toAddress, fungibleAsset) => {

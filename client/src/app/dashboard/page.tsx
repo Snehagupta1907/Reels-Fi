@@ -49,8 +49,8 @@ const DashboardPage = () => {
               </svg>
             </div>
             <div className="px-4">
-              <p className="mb-1 text-2xl font-black text-white">1844 Reels</p>
-              <p className="font-medium text-indigo-100">$192,234.00</p>
+              <p className="mb-1 text-2xl font-black text-white">14 Reels</p>
+              <p className="font-medium text-indigo-100">$1,934.00</p>
             </div>
           </div>
           <div className="flex flex-wrap justify-between">
@@ -140,9 +140,13 @@ const DashboardPage = () => {
 
             <tbody className="lg:border-gray-300">
               <tr className="">
-                <td className="whitespace-no-wrap py-4 text-sm font-bold text-white sm:px-6">
-                  #2343
-                </td>
+                <a
+                className="block"
+                  href="https://explorer.aptoslabs.com/account/0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4?network=devnet"
+                  target="_blank"
+                >
+                  #4343
+                </a>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
                   07 February, 2022
@@ -150,9 +154,7 @@ const DashboardPage = () => {
 
                 <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-green-400 lg:text-left">
                   $100.00
-                  <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-blue-600 py-2 px-3 text-left text-xs font-medium text-white lg:hidden">
-                    Complete
-                  </div>
+                  
                 </td>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
@@ -160,7 +162,7 @@ const DashboardPage = () => {
                     onClick={() => {
                       handleClick(5);
                     }}
-                    className="inline-flex items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white"
+                    className="inline-flex cursor-pointer items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white"
                   >
                     Claim Reward
                   </div>
@@ -169,7 +171,13 @@ const DashboardPage = () => {
 
               <tr className="">
                 <td className="whitespace-no-wrap py-4 text-sm font-bold text-white sm:px-6">
-                  #2343
+                  <a
+                    className="block"
+                    href="https://explorer.aptoslabs.com/account/0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4?network=devnet"
+                    target="_blank"
+                  >
+                    #2343
+                  </a>
                 </td>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
@@ -185,7 +193,7 @@ const DashboardPage = () => {
                     onClick={() => {
                       handleClick(5);
                     }}
-                    className="inline-flex items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white"
+                    className="inline-flex cursor-pointer  items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white"
                   >
                     Claim Reward
                   </div>
