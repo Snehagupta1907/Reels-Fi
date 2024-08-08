@@ -2,7 +2,9 @@
 import Link from "next/link";
 import React from "react";
 import toast from "react-hot-toast";
+import { useRouter } from 'next/navigation';
 const SigninPage: React.FC = () => {
+  const router = useRouter();
   const [loginData, setLoginData] = React.useState({
     email: "",
     password: "",
@@ -17,7 +19,7 @@ const SigninPage: React.FC = () => {
     console.log(loginData);
     await delay(4000);
     toast.success("Logged in Successfully !!!", { id });
-    
+    router.push("/");
   };
 
   return (

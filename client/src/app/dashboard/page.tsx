@@ -141,7 +141,7 @@ const DashboardPage = () => {
             <tbody className="lg:border-gray-300">
               <tr className="">
                 <a
-                className="block"
+                className="block font-bold"
                   href="https://explorer.aptoslabs.com/account/0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4?network=devnet"
                   target="_blank"
                 >
@@ -149,7 +149,7 @@ const DashboardPage = () => {
                 </a>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
-                  07 February, 2022
+                  09 Aug, 2024
                 </td>
 
                 <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-green-400 lg:text-left">
@@ -181,7 +181,7 @@ const DashboardPage = () => {
                 </td>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
-                  09 January, 2022
+                  09 Aug, 2024
                 </td>
 
                 <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-green-400 lg:text-left">

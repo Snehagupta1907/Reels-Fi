@@ -4,8 +4,11 @@ import React from "react";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 import toast from "react-hot-toast";
+import { useRouter } from 'next/navigation';
+
 const SignUpPage: React.FC = () => {
   const {account} = useWallet();
+  const router = useRouter()
   const [registerData, setRegisterData] = React.useState({
     name: "",
     email: "",
@@ -23,6 +26,7 @@ const SignUpPage: React.FC = () => {
     console.log(registerData);
     await delay(4000);
     toast.success("Registered Successfully !!!", { id });
+    router.push("/login");
   }
   return (
     <div className="flex min-h-screen">
