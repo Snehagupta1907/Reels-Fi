@@ -10,16 +10,16 @@ const CreateReelPage = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
-      'video/*': []  
+      "video/*": [],
     },
     onDrop: (acceptedFiles) => {
       if (acceptedFiles.length > 0) {
         setVideo(acceptedFiles[0]);
       }
-    }
+    },
   });
   const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     let id = toast.loading("Uploading your video...");
     await delay(2000);
     e.preventDefault();
@@ -69,7 +69,8 @@ const CreateReelPage = () => {
               </div>
               {video && (
                 <div className="mt-2 text-light-2">
-                  <span className="font-semibold">Selected File:</span> {video.name}
+                  <span className="font-semibold">Selected File:</span>{" "}
+                  {video.name}
                 </div>
               )}
             </div>
@@ -107,6 +108,30 @@ const CreateReelPage = () => {
               className="mt-1 p-4 block w-full text-light-1 bg-dark-3 border border-dark-4 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
+          <div className="w-full flex justify-center items-center text-white">
+            <h1>----------- OR ------------</h1>
+          </div>
+          <div className="max-w-md py-3 sm:mx-auto">
+            <div className="flex flex-col rounded-xl bg-slate-200 shadow-lg">
+              <div className="px-12 py-5">
+               
+              </div>
+              <div className="flex w-full flex-col items-center bg-black">
+                <div className="flex w-3/4 flex-col mt-10">
+                  <label className="block" htmlFor="name">
+                    <input
+                      className="w-full rounded-md border bg-white px-2 py-3 outline-none ring-blue-600 focus:ring-1"
+                      type="email"
+                      placeholder="Enter your Reel Link"
+                    />
+                  </label>
+                  <button className="my-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 py-3 text-base text-white">
+                    Upload
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="flex items-center space-x-3">
             <input
               type="checkbox"
@@ -122,6 +147,7 @@ const CreateReelPage = () => {
               Monetize your Reel with Reels-Fi
             </label>
           </div>
+
           <button
             type="submit"
             className="w-full flex justify-center py-4 px-4 border border-transparent shadow-sm text-sm  text-dark-1 font-semibold bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600"
