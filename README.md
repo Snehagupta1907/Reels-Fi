@@ -48,6 +48,9 @@
 - **4. Wan Chain:**
   - Platform Token : https://testnet.wanscan.org/token/0x6d4e4b9ceb5a92f5212c017187528bcd0c516965
   - Reels-Fi Contract : https://testnet.wanscan.org/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA
+- **5. Core Dao Social Track:**
+  - Platform Token : https://scan.test.btcs.network/token/0x6d4e4b9ceb5a92f5212c017187528bcd0c516965
+  - Reels-Fi Contract : https://scan.test.btcs.network/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA
 
 
 ### Platform UI 
