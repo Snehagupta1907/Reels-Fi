@@ -6,15 +6,19 @@ const DashboardPage = () => {
   const { mintTokens, transferTokens, depositTokens } = useDataContext();
   const { account } = useWallet();
 
-  const handleClick = async () => {
+  const handleClick = async (amount) => {
     if (!account) return;
     console.log("Account:", account);
     // await getTokenMetadata(account?.address);
-    await mintTokens(
+    // await mintTokens(
+    //   "0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",
+    //   1000000000
+    // );
+    await transferTokens(
       "0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",
-      1000000000
+      "0x27ef28cce0eed615f0029370831aeb75cbbbfefdbf12087bea94f11745759bb6",
+      amount * 10 ** 6
     );
-    // await transferTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4","0x27ef28cce0eed615f0029370831aeb75cbbbfefdbf12087bea94f11745759bb6",1000);
     // await depositTokens();
   };
   return (
@@ -117,7 +121,7 @@ const DashboardPage = () => {
             <thead className="hidden border-b lg:table-header-group">
               <tr className="">
                 <td className="whitespace-normal py-4 text-md font-medium text-white sm:px-6">
-                 Reel-Id
+                  Reel-Id
                 </td>
 
                 <td className="whitespace-normal py-4 text-md font-medium text-white sm:px-6">
@@ -145,21 +149,26 @@ const DashboardPage = () => {
                 </td>
 
                 <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-green-400 lg:text-left">
-                  $59.00
+                  $100.00
                   <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-blue-600 py-2 px-3 text-left text-xs font-medium text-white lg:hidden">
                     Complete
                   </div>
                 </td>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
-                  <div className="inline-flex items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white">
+                  <div
+                    onClick={() => {
+                      handleClick(5);
+                    }}
+                    className="inline-flex items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white"
+                  >
                     Claim Reward
                   </div>
                 </td>
               </tr>
 
               <tr className="">
-              <td className="whitespace-no-wrap py-4 text-sm font-bold text-white sm:px-6">
+                <td className="whitespace-no-wrap py-4 text-sm font-bold text-white sm:px-6">
                   #2343
                 </td>
 
@@ -168,17 +177,20 @@ const DashboardPage = () => {
                 </td>
 
                 <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-green-400 lg:text-left">
-                  $59.00
-                
+                  $120.00
                 </td>
 
                 <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-white sm:px-6 lg:table-cell">
-                <div className="inline-flex items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white">
-                Claim Reward
+                  <div
+                    onClick={() => {
+                      handleClick(5);
+                    }}
+                    className="inline-flex items-center rounded-full bg-blue-600 py-2 px-3 text-xs text-white"
+                  >
+                    Claim Reward
                   </div>
                 </td>
               </tr>
-            
             </tbody>
           </table>
         </div>
