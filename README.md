@@ -6,15 +6,23 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
 
 
 ## Key Features
+### Here are the Reels-Fi features in point form:
+
+- **Monetize Your Existing Reels:** Turn your current reels into revenue-generating content.
+- **Upload Custom Reels:** Share and monetize your own custom-created reels.
+- **Invest in Favorite Creators' Reels:** Place an investment amount on your favorite content creators' reels for a specific tenure.
+- **Withdraw Rewards:** Redeem your earnings once the investment tenure is complete.
+- **Earn Reels-Fi Tokens:** Gain Reels-Fi tokens through a "Refer and Earn" program.
 
 ## Technical Architecture
+<img width="1214" alt="Screenshot 2024-08-07 at 10 07 16 AM" src="https://github.com/user-attachments/assets/300dffc3-9f8a-44b6-aa39-940c847cfd65">
 
 ## TechStack
 
 - Next.js
-- Javascript
+- Typescript
 - Tailwind CSS
-- Move
+- Move Language
 - Solidity
 - Petra Wallet SDK
 
@@ -33,6 +41,7 @@ APT-Reels-fi is a platform designed for avid reel viewers, offering them the opp
   - USDC Tokens : https://www.oklink.com/amoy/address/0x41e94eb019c0762f9bfcf9fb1e58725bfb0e7582
 - **2. Aptos Social Track:**
   - Reels-Fi: https://explorer.aptoslabs.com/txn/86687535/changes?network=devnet 
+  - Checkout Transactions : https://explorer.aptoslabs.com/account/0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4?network=devnet
 - **43. Edu Chain:**
   - Platform Token : https://opencampus-codex.blockscout.com/address/0x6D4E4b9cEb5A92F5212c017187528bCd0c516965
   - Reels-Fi Contract : https://opencampus-codex.blockscout.com/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA
