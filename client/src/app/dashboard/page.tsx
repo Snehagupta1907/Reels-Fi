@@ -2,10 +2,11 @@
 import React from "react";
 import { useDataContext } from "@/context/DataContext";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import { useAccount, usePublicClient, useNetwork } from "wagmi";
 const DashboardPage = () => {
   const { mintTokens, transferTokens, depositTokens } = useDataContext();
   const { account } = useWallet();
-
+  const {address} = useAccount();
   const handleClick = async (amount) => {
     if (!account) return;
     console.log("Account:", account);

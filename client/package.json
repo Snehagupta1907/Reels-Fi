@@ -13,6 +13,8 @@
     "@aptos-labs/wallet-adapter-react": "^3.5.9",
     "@nextui-org/react": "^2.4.6",
     "@nextui-org/theme": "^2.2.9",
+    "@rainbow-me/rainbowkit": "^2.1.4",
+    "@tanstack/react-query": "^5.51.23",
     "bcryptjs": "^2.4.3",
     "framer-motion": "^11.3.21",
     "jsonwebtoken": "^9.0.2",
@@ -26,7 +28,9 @@
     "react-icons": "^5.2.1",
     "react-infinite-scroll-component": "^6.1.0",
     "react-web-share": "^1.1.6",
-    "styled-components": "^6.0.0-rc.2"
+    "styled-components": "^6.0.0-rc.2",
+    "viem": "2.x",
+    "wagmi": "^2.12.5"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

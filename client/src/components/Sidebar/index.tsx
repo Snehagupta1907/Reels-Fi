@@ -6,6 +6,7 @@ import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { SiYoutubeshorts } from "react-icons/si";
 import Link from "next/link";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import { useAccount, usePublicClient, useNetwork } from "wagmi";
 interface SidebarProps {
   children: ReactNode;
 }
@@ -17,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     setIsSidebarOpen(false);
   };
   const { account } = useWallet();
-
+  const {address} = useAccount();
   return (
     <>
       <div className="relative flex h-screen antialiased text-gray-900 bg-dark-4">
@@ -71,7 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                   <MdHome size={35} />
                   <span className="font-bold text-xl">Home</span>
                 </Link>
-                {account?.address ? (
+                {address? (
                   <>
                     <Link
                       href="/dashboard"

@@ -10,7 +10,8 @@ const ChainDropdown = () => {
     { name: "EduChain", url: "https://opencampus-codex.blockscout.com/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA" },
     { name: "Wan-Chain", url: "https://testnet.wanscan.org/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA" },
     { name: "Core-DAO", url: "https://scan.test.btcs.network/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA" },
-    { name: "Reels-Fi Contract", url: "https://github.com/Snehagupta1907/APT-ReelFI/blob/main/web3-backend/contracts/V1/ReelsFi.sol" },
+    // { name: "Reels-Fi Contract", url: "https://github.com/Snehagupta1907/APT-ReelFI/blob/main/web3-backend/contracts/V1/ReelsFi.sol" },
+    {name:"Manta Chain",url:"https://pacific-explorer.sepolia-testnet.manta.network/address/0xBCab4ba549886e6BEF67d9f3d381a2710316F8CA"}
   ];
   const dropdownRef = useRef<HTMLDivElement>(null);
   const toggleDropdown = () => setIsOpen(!isOpen);
