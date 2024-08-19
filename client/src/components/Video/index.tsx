@@ -236,7 +236,7 @@ const Video = ({
   const [tenure, setTenure] = useState("");
   const [totalBid, setTotalBid] = useState<number>(0);
   const [incrementValue, setIncrementValue] = useState<number>(0); // New state for increment value
-  const {  mintTokens } = useDataContext();
+  const {  mintTokens,depositFunds } = useDataContext();
   useEffect(() => {
     // Retrieve total bid for the current video post ID
     const storedBids = JSON.parse(localStorage.getItem(`bids_${video.postId}`) || "[]");
@@ -276,7 +276,8 @@ const Video = ({
 
     const sumOfBids = storedBids.reduce((total: number, bid: number) => total + bid, 0);
     setTotalBid(sumOfBids);
-    await mintTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",newBid*(10**6));
+    // await mintTokens("0x25e6d86a5a7083d9d61e40381e5238ab6d2e785825eba0183cebb6009483dab4",newBid*(10**6));
+    await depositFunds(120,1);
     setIsModalOpen(false);
     setBidAmount("");
     setTenure("");
